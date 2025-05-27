@@ -2,6 +2,8 @@ from django.urls import path
 
 from . import views
 
+app_name = 'instrutor'
+
 urlpatterns = [
-    path("instrutor/", views.index, name="index"),
+    path('listaInstrutor', views.listarInstrutor, name='listarInstrutor'),
 ]

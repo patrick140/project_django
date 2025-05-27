@@ -26,8 +26,7 @@ urlpatterns = [
 
     path('', 
          include("tiposdeatividade.urls") ),
-    path('', 
-         include("aluno.urls")),
+    path('aluno/', include("aluno.urls", namespace='aluno')),
     path('', 
          include("instrutor.urls")),
     path('', 
@@ -37,3 +36,5 @@ urlpatterns = [
     path('', 
          include("utilitarios.urls"))
 ]
+
+#urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

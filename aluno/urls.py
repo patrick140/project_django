@@ -5,6 +5,7 @@ from . import views
 app_name = 'aluno'
 
 urlpatterns = [
+    path('inicia', views.inicio, name='inicio'),
     path('lista', views.listar, name='listar'),
-    path('cadastra', views.cadastrar, name='cadastrar')
+    path('cadastra', views.cadastrar, name='cadastrar'),
 ]

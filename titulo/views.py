@@ -1,6 +1,9 @@
-from django.shortcuts import HttpResponse
+from django.shortcuts import HttpResponse, render
 
 # Create your views here.
 
-def index(request):
-    return HttpResponse("Olá! Eu sou o index e vim por titulo/.")
+def listarTitulo(request):
+    return render(request, 'titulo/cadastroTitulos.html')
+
+def cadastrarTitulo(request):
+    return render(request, 'titulo/listarTitulos.html')

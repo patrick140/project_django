@@ -4,3 +4,6 @@ from django.shortcuts import HttpResponse, render
 
 def listarInstrutor(request):
     return render(request, 'instrutor/listarInstrutores.html')
+
+def CadastrarInstrutor(request):
+    return render(request, 'instrutor/cadastroInstrutor.html')

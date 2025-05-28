@@ -2,13 +2,9 @@ from django.shortcuts import HttpResponse, render
 
 # Create your views here.
 
-def index(request):
-    return HttpResponse("Olá! Eu sou o index.")
+def listarTiposAtividade(request):
+    return render(request, 'tiposdeatividade/listarTiposAtividade.html')
 
-def exibe_mensagem(request):
-    t_html = '<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Document</title> </head> <body> </body> </html>'
-    return HttpResponse(t_html)
-
-def text_render (request):
-    return render(request, 'escola.html')
+def cadastroTiposAtividade(request):
+    return render(request, 'tiposdeatividade/cadastroTiposAtividade.html')
 

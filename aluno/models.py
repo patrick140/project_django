@@ -7,9 +7,12 @@ class Aluno(models.Model):
                               help_text='Matricula do aluno')
     nome = models.CharField(max_length=70, 
                                  help_text='Nome do aluno')
-    dataInicial = models.DateField(help_text='Data inicial')
+    dataInicial = models.DateField(null=False,
+                                   help_text='Data inicial')
 
-    dataFinal = models.DateField(help_text='Data Final')
+    dataFinal = models.DateField(null=True,
+                                 blank=True,
+                                 help_text='Data Final')
 
     def __str__(self):
         return f'{self.nome} - {self.matricula}'

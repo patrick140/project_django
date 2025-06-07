@@ -1,0 +1,14 @@
+BEGIN;
+--
+-- Add field codigo_titul0 to instrutor
+--
+ALTER TABLE "instrutor_instrutor" ADD COLUMN "titulo_codigo" integer NULL REFERENCES "titulo_titulo" ("codigo") DEFERRABLE INITIALLY DEFERRED;
+--
+-- Alter field dataNascimento on instrutor
+--
+CREATE TABLE "new__instrutor_instrutor" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "rg" varchar(15) NOT NULL, "nome" varchar(70) NOT NULL, "telefone" varchar(9) NOT NULL, "ddd" varchar(3) NOT NULL, "titulo_codigo" integer NULL REFERENCES "titulo_titulo" ("codigo") DEFERRABLE INITIALLY DEFERRED, "dataNascimento" date NULL);
+INSERT INTO "new__instrutor_instrutor" ("id", "rg", "nome", "telefone", "ddd", "titulo_codigo", "dataNascimento") SELECT "id", "rg", "nome", "telefone", "ddd", "titulo_codigo", "dataNascimento" FROM "instrutor_instrutor";
+DROP TABLE "instrutor_instrutor";
+ALTER TABLE "new__instrutor_instrutor" RENAME TO "instrutor_instrutor";
+CREATE INDEX "instrutor_instrutor_titulo_codigo_718dfa34" ON "instrutor_instrutor" ("titulo_codigo");
+COMMIT;

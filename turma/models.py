@@ -12,9 +12,9 @@ class Turma(models.Model):
 
     duracaoAula = models.SmallIntegerField(help_text='Duração da aula')
 
-    dataInicial = models.DateField(help_text='Data inicial')
+    date_inicial = models.DateField(help_text='Data inicial')
 
-    dataFinal = models.DateField(help_text='Data Final')
+    date_final = models.DateField(help_text='Data Final')
 
     codigo_atividade = models.ForeignKey(tiposDeAtividade, on_delete=models.CASCADE, null=True, blank=True,
                                          related_name='tiposDeAtividade')

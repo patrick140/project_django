@@ -24,8 +24,10 @@
         </div>
     </div>
 
+    {% if titulo %}
+
     <!-- tabela responsiva -->
-    <div class="table-responsive">
+        <div class="table-responsive">
 
         <!-- classes para tabela (Bootstrap) , tabela sem borda, conteudo alinhado ao centro, ... , width: auto -->
         <table class="table
@@ -49,23 +51,21 @@
             </thead>
 
             <!-- linhas -->
-            <tr>
-                <td> 1 </td>
-                <td> Professor Doutor </td>
-            </tr>
-            <tr>
-                <td> 2 </td>
-                <td> Professor Sabe-Tudo </td>
-            </tr>
-            <tr>
-                <td> 3 </td>
-                <td> Professor Estagiário </td>
-            </tr>
-
+            {% for titulo in titulo %}
+                <tr>
+                    <td class="text-center"> {{ titulo.codigo }} </td>
+                    <td class="text-left"> {{ titulo.descricao }} </td>
+                </tr>
+            
+            {% endfor %}
         </table>
 
-    </div>
-
+        </div>
+    {% else %}
+        <div class="'text-danger">
+            <p>Não há títulos cadastrados</p>
+        </div>
+    {% endif %}
 </main>
 
 {% endblock %}

@@ -8,11 +8,11 @@ class Aluno(models.Model):
                               help_text='Matricula do aluno')
     nome = models.CharField(max_length=70, 
                                  help_text='Nome do aluno')
-    dataInicial = models.DateField(null=False,
+    date_inicial = models.DateField(null=False,
                                    default=timezone.now(),
                                    help_text='Informe a data inicial de matrícula do aluno')
 
-    dataFinal = models.DateField(null=True,
+    date_final = models.DateField(null=True,
                                  blank=True,
                                  help_text='Informe a data Final de matrícula do aluno')
 

@@ -8,7 +8,7 @@
 <div class="collapse navbar-collapse justify-content-end" id="mynavbar">
     <div class="navbar-nav">
         <a href="/" class="nav-link">Início</a>
-        <a href="{% url 'titulo:cadastrarTitulo' %}" class="nav-link">Cadastrar</a>
+        <a href="{% url 'titulo:cadastroTitulo' %}" class="nav-link">Cadastrar</a>
         <a href="{% url 'titulo:listarTitulo' %}" class="nav-link">Listar</a>
     </div>
 </div>
@@ -17,7 +17,8 @@
 
 {% block titulo_pagina %}
 <main class="container m-2 w-75 mx-auto">
-    <form action="#" method="POST" name="frmCadastrarTitulo" id="idFrmCadastrarTiposAtividade">
+    <form action="{% url 'titulo:cadastrarTitulo' %}" method="POST" name="frmCadastrarTitulo" id="idFrmCadastrarTiposAtividade">
+        {% csrf_token %}
         <div class="form-group">
             <label for='idDescricao'>Descrição</label>
             <input class="form-control" type='text' id='idDescricao' name='descricao' placeholder='Informe a descrição' required>
